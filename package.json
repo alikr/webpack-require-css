@@ -1,0 +1,29 @@
+{
+  "name": "webpack-require-css",
+  "version": "0.0.1",
+  "description": "you can use the 'require' method to load css resource in webpack tool",
+  "main": "index.js",
+  "scripts": {
+   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:smailsky/webpack-require-css.git"
+  },
+  "keywords": [
+    "webpack",
+    "css",
+    "style",
+    "require",
+    "plugin",
+    "loader"
+  ],
+  "author": "smailsky",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/smailsky/webpack-require-css/issues"
+  },
+  "homepage": "https://github.com/smailsky/webpack-require-css",
+  "dependencies":{
+    "md5":"^2.0.0"
+  }
+}
