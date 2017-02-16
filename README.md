@@ -24,7 +24,7 @@ module:{
         loaders:[
             {
                 test: /\.css$/,
-                loader: 'webpack-require-css'
+                loader: 'webpack-require-css?publicPath=/css/'
             }
         ]
     }
