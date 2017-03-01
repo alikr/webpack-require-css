@@ -1,7 +1,7 @@
 {
   "name": "webpack-require-css",
-  "version": "0.0.2",
-  "description": "you can use the 'require' method to load css file",
+  "version": "0.0.3",
+  "description": "you can use the 'require' method to load css file, Just load the file",
   "main": "index.js",
   "scripts": {
    },

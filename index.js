@@ -7,20 +7,23 @@ module.exports = function(context) {
     var ext = _filename.slice(_filename.lastIndexOf('.')+1).toLowerCase();
     if(ext=='css'){
         var query = this.query;
-        var publicPath = query.match(reg);
-        var _path = publicPath && publicPath[1] ? publicPath[1] : '';
+        var isWP2 = typeof query=='object';
+        var publicPath = isWP2 ? query.publicPath : query.match(reg);
+        var _path = isWP2 ? (publicPath||'')
+                :(publicPath && publicPath[1]) ? publicPath[1]
+                :'';
         var id = md5(context);
         var abspath = _path + _filename;
-        var loadFile = abspath + '?v='+id;
+        var loadFile = abspath + '?v=' + id;
         var content = [
             "var isReady=false;",
+            "var hasCSS=document.getElementById('"+id+"');",
             "var css=document.getElementsByTagName('link');",
             "for(var i=0,j=css.length;i<j;i++){",
             "var isCss = css[i].rel=='stylesheet';",
             "isReady = isCss && !!~css[i].href.indexOf('"+abspath+"');",
             "}",
-            "if(document.getElementById('"+id+"')||isReady)return;",
-            "if(document.getElementById('"+id+"'))return;",
+            "if(hasCSS||isReady)return;",
             "var link = document.createElement('link');",
             "link.type = 'text/css';",
             "link.id = '"+id+"';",

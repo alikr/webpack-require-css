@@ -1,7 +1,7 @@
 # webpack-require-css
 webpack-require-css
 
-> just load css file
+> Just load css file
 
 # Install
 
@@ -17,7 +17,25 @@ page.js
 require("css/index.css");
 ```
 
-webpack.config.js
+### webpack.config.js
+> webpack 2
+
+```javascript
+module:{
+        rules:[
+            {
+                test: /\.css$/,
+                loader:"webpack-require-css",
+                options:{
+                    publicPath:'/static/css/'
+                }
+            }
+        ]
+    }
+
+```
+
+> webpack 1.x.x
 
 ```javascript
 module:{
